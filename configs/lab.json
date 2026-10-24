@@ -1,0 +1,20 @@
+{
+  "seed": 7,
+  "width": 640,
+  "height": 400,
+  "fx": 520.0,
+  "fy": 520.0,
+  "canny_low": 60,
+  "canny_high": 150,
+  "hough_threshold": 45,
+  "hough_min_line_length": 25,
+  "hough_max_line_gap": 8,
+  "orb_features": 1000,
+  "pipeline_orb_features": 500,
+  "match_ratio": 0.75,
+  "detection_threshold": 0.5,
+  "quant_scale": 32.0,
+  "benchmark_frames": 20,
+  "scene_shift_x": 8,
+  "scene_shift_y": 3
+}
