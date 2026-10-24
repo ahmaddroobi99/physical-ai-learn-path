@@ -15,7 +15,18 @@ pip install -e . --no-deps
 
 `requirements.txt` installs the CPU builds of PyTorch and TorchVision from the official CPU wheel index. This machine does not need a CUDA wheel for the lessons.
 
-## Run
+## Interactive lab
+
+Open the teaching page. Each lesson explains one function, shows its arguments, and runs it when you move a control or press Run.
+
+```bash
+source learn/bin/activate
+python -m physical_ai_lab.server
+```
+
+Then open http://127.0.0.1:8765
+
+## Run the whole path in the terminal
 
 ```bash
 source learn/bin/activate

@@ -15,6 +15,8 @@ dependencies = [
   "pillow",
   "torch==2.14.1+cpu",
   "torchvision==0.29.1+cpu",
+  "fastapi",
+  "uvicorn",
 ]
 
 [project.optional-dependencies]
@@ -22,9 +24,13 @@ dev = ["pytest"]
 
 [project.scripts]
 physical-ai-lab = "physical_ai_lab.__main__:main"
+physical-ai-studio = "physical_ai_lab.server:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+physical_ai_lab = ["static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

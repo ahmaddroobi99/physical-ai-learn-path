@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Physical AI Lab</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <p class="eyebrow">Learning path</p>
+        <h1>Physical AI Lab</h1>
+        <p class="brand-copy">Pick a lesson. Move the controls. The real function runs and the result appears beside the explanation.</p>
+      </div>
+      <nav id="lesson-nav" aria-label="Lessons"></nav>
+    </aside>
+    <main>
+      <header class="lesson-head">
+        <p id="step-label" class="eyebrow">Lesson</p>
+        <h2 id="lesson-title">Loading</h2>
+        <p id="lesson-idea"></p>
+      </header>
+      <section class="workspace">
+        <form id="controls" class="controls">
+          <div class="controls-head">
+            <h3>Arguments</h3>
+            <p id="watch"></p>
+          </div>
+          <div id="param-fields"></div>
+          <div class="actions">
+            <button type="submit" id="run">Run this function</button>
+            <button type="button" id="prev" class="ghost">Previous</button>
+            <button type="button" id="next" class="ghost">Next</button>
+          </div>
+        </form>
+        <section class="output" aria-live="polite">
+          <div class="output-head">
+            <h3>Output</h3>
+            <p id="elapsed"></p>
+          </div>
+          <p id="status" class="status">Choose a lesson to run it.</p>
+          <pre id="call" class="call" hidden></pre>
+          <div id="lines" class="lines"></div>
+          <div id="images" class="images"></div>
+          <p id="notice" class="notice" hidden></p>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

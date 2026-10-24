@@ -1,0 +1,303 @@
+:root {
+  color-scheme: light;
+  --ink: #1c1915;
+  --muted: #5e564c;
+  --paper: #f3efe6;
+  --panel: #fffdf8;
+  --line: #e3d9cc;
+  --sidebar: #221e1a;
+  --sidebar-ink: #f6f1e8;
+  --sidebar-muted: #c9bbaa;
+  --accent: #b4532a;
+  --accent-ink: #fff8f3;
+  --good: #245c45;
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+button, input { font: inherit; }
+
+.app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--sidebar);
+  color: var(--sidebar-ink);
+  padding: 28px 18px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+.brand h1 {
+  margin: 4px 0 8px;
+  font-size: 1.7rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.brand-copy, .eyebrow, #watch, #elapsed, .help {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--sidebar-muted);
+}
+
+.brand-copy {
+  margin: 0 0 22px;
+  color: var(--sidebar-muted);
+  line-height: 1.45;
+  font-size: 0.92rem;
+}
+
+#lesson-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lesson-link {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px;
+  align-items: baseline;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--sidebar-ink);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.lesson-link span {
+  font-family: "Segoe UI", sans-serif;
+  color: var(--sidebar-muted);
+  font-size: 0.82rem;
+}
+
+.lesson-link.current {
+  background: #3a322b;
+}
+
+.lesson-link:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+main {
+  padding: 32px 36px 48px;
+  max-width: 1180px;
+}
+
+.lesson-head h2 {
+  margin: 4px 0 8px;
+  font-size: 2.2rem;
+  letter-spacing: -0.03em;
+}
+
+#lesson-idea, #watch {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1.08rem;
+}
+
+#lesson-idea { max-width: 68ch; }
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) 1fr;
+  gap: 22px;
+  margin-top: 26px;
+  align-items: start;
+}
+
+.controls, .output {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+#param-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 16px 0 8px;
+}
+
+.output { position: sticky; top: 18px; }
+
+.controls-head h3, .output-head h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+#watch { color: var(--muted); font-size: 0.95rem; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.field-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+}
+
+.field-label b { font-variant-numeric: tabular-nums; }
+
+.help { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.35; }
+
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+input[type="text"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+#run {
+  grid-column: 1 / -1;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: "Segoe UI", sans-serif;
+}
+
+#run:disabled { opacity: 0.65; cursor: progress; }
+
+.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.output-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+#elapsed {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.status { color: var(--muted); font-family: "Segoe UI", sans-serif; }
+
+.status.error { color: #8d2a1f; }
+
+.call, .lines {
+  font-family: "ui-monospace", "Cascadia Code", "Source Code Pro", monospace;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  background: #f7f3eb;
+  border-radius: 10px;
+  padding: 12px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.call { margin: 0 0 12px; }
+
+.lines { margin: 0; }
+
+.images {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+figure {
+  margin: 0;
+  background: #f7f3eb;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: white;
+}
+
+figcaption {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 6px 4px 2px;
+}
+
+.notice {
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--good);
+  line-height: 1.45;
+}
+
+.empty-note {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Segoe UI", sans-serif;
+}
+
+@media (max-width: 980px) {
+  .app, .workspace { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; padding-bottom: 8px; }
+  .brand-copy { display: none; }
+  #lesson-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .lesson-link { width: auto; white-space: nowrap; }
+  main { padding: 22px 16px 40px; }
+  .controls, .output, .actions { position: static; }
+}
